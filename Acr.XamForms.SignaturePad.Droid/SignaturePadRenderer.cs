@@ -107,7 +107,7 @@ namespace Acr.XamForms.SignaturePad.Droid {
 
 
         private Stream GetImageStream(ImageFormatType imgFormat) {
-            using (var image = this.Control.GetImage()) { 
+            using (var image = this.Control.GetImage(true, false)) { 
                 var stream = new MemoryStream();
                 var format = imgFormat == ImageFormatType.Png
                     ? Android.Graphics.Bitmap.CompressFormat.Png

@@ -57,8 +57,8 @@ namespace Acr.XamForms.SignaturePad.iOS {
 
             this.Element.SetInternals(
                 imgFormat => imgFormat == ImageFormatType.Jpg
-                        ? view.GetImage().AsJPEG().AsStream()
-                        : view.GetImage().AsPNG().AsStream(),
+                        ? view.GetImage(true, false).AsJPEG().AsStream()
+                        : view.GetImage(true, false).AsPNG().AsStream(),
                 () => view.Points.Select(x => new DrawPoint((float)x.X, (float)x.Y)), 
                 x => view.LoadPoints(x.Select(y => new CGPoint(y.X, y.Y)).ToArray()),
                 () => view.IsBlank
